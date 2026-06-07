@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel DZ - Elite VIP Concierge Contact</title>
+  <meta name="description" content="Contact Travel DZ luxury concierge. Connect with our travel planners via secure contact forms, phone, or email to schedule custom tours in Algeria.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style/shared.css">
+  <link rel="stylesheet" href="../style/contact.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <header class="glass-panel" id="header">
+    <nav class="navbar">
+      <a href="../content/HOME.html" class="nav-logo">
+        <img src="../images/logotraveldz.jpg" alt="Travel DZ Logo">
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../content/HOME.html" class="nav-link">Home</a></li>
+        <li><a href="../content/destination.html" class="nav-link">Destinations</a></li>
+        <li><a href="../content/readMore.html" class="nav-link">Blog</a></li>
+        <li><a href="../content/contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="../content/login.html" class="nav-link"><i class="fa-regular fa-user"></i> Login</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../content/booking.html" class="btn-primary">Book Now</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+  <main class="contact-container">
+    <div class="contact-layout">
+      <div class="contact-info-panel glass-panel animate-fade-in-up">
+        <span class="info-badge"><i class="fa-solid fa-hotel"></i> VIP Headquarters</span>
+        <h2>GET IN TOUCH</h2>
+        <p class="info-intro">Whether planning a corporate retreat, private helicopter tour, or a bespoke Saharan honeymoon, our elite concierge team is ready to assist you.</p>
+        
+        <div class="title-divider" style="margin: 15px 0 35px; width: 40px;"></div>
+
+        <div class="contact-methods">
+          <div class="method-card">
+            <div class="method-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="method-text">
+              <h4>Head Office</h4>
+              <p>12 Boulevard Didouche Mourad, Algiers, Algeria</p>
+            </div>
+          </div>
+          
+          <div class="method-card">
+            <div class="method-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div class="method-text">
+              <h4>Direct Hotline</h4>
+              <p><a href="tel:+21321555555">+213 (0) 21 55 55 55</a></p>
+              <p><a href="tel:+213550123456">+213 (0) 550 12 34 56</a></p>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="method-text">
+              <h4>Private Email</h4>
+              <p><a href="mailto:concierge@traveldz.com">concierge@traveldz.com</a></p>
+              <p><a href="mailto:bookings@traveldz.com">bookings@traveldz.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-social-block">
+          <h4>Connect Socially</h4>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        </div>
+      </div>
+      <div class="contact-form-panel glass-panel animate-fade-in-up" style="animation-delay: 0.15s;">
+        <h3>SEND AN INQUIRY</h3>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 5px; margin-bottom: 25px;">Enter your message details. Our travel directors will contact you promptly.</p>
+        <div class="title-divider" style="margin: 15px 0 30px; width: 40px;"></div>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Full Name</label>
+            <input type="text" id="contact-name" name="from_name" placeholder="E.g. Mourad K." required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" name="reply_to" placeholder="mourad@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Your Message</label>
+            <textarea id="contact-message" name="message" rows="6" placeholder="Describe your bespoke tour goals (dates, guests, locations, special requirements)..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" id="contact-submit-btn" style="width: 100%; justify-content: center; padding: 14px;">
+            <span id="btn-text">Submit Inquiry <i class="fa-regular fa-paper-plane"></i></span>
+            <span id="btn-loading" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i> Securing Line...</span>
+          </button>
+        </form>
+
+        <div class="success-message-panel" id="form-success-panel" style="display: none; margin-top: 20px;">
+          <div class="success-pill">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h4>Inquiry Received</h4>
+              <p>Our advisor has been notified. Check your email for status alerts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="logo"><img src="../images/logotraveldz.jpg" alt="Travel DZ Logo"></div>
+        <p>Providing ultimate luxury, private travel experiences and bespoke tour guiding services across the magnificent historic wilayas of Algeria.</p>
+      <div class="footer-socials">
+          <a href="https://www.instagram.com" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="../content/destination.html">Destinations</a></li>
+          <li><a href="../content/readMore.html">Travel Blog</a></li>
+          <li><a href="../content/booking.html">Book Online</a></li>
+          <li><a href="../content/login.html">Member Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to receive curated tour schedules and private flight updates from Algeria.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to our luxury list!');">
+          <input type="email" placeholder="Your premium email" required>
+          <button type="submit" class="btn-primary"><i class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Travel DZ. All Rights Reserved. Crafted for premium experiences.</p>
+    </div>
+  </footer>
+  <script src="../javascript/data.js"></script>
+  <script src="../javascript/contact.js"></script>
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>

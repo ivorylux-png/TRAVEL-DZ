@@ -1,0 +1,224 @@
+.booking-container {
+  max-width: var(--max-width);
+  margin: 40px auto 100px;
+  padding: 0 40px;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1.1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.booking-form-area {
+  padding: 40px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.booking-form-area h2 {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-intro-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.form-group label i {
+  color: var(--accent-gold-start);
+  margin-right: 5px;
+}
+
+.form-group input {
+  background: rgba(2, 6, 23, 0.5);
+  border: 1px solid var(--border-glass);
+  padding: 14px 20px;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  border-color: var(--accent-gold-start);
+  box-shadow: 0 0 10px rgba(244, 201, 93, 0.15);
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(50%) saturate(1000%) hue-rotate(340deg); 
+  cursor: pointer;
+}
+
+.form-group input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.form-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 30px 0 20px;
+}
+
+.form-checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 4px;
+  accent-color: var(--accent-gold-start);
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.form-checkbox-group label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.form-group.invalid input {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.2) !important;
+}
+
+.form-group.invalid .error-message {
+  display: block;
+}
+
+.summary-receipt {
+  padding: 30px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.summary-receipt h3 {
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.receipt-preview-banner {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border: 1px solid var(--border-glass);
+}
+
+.receipt-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.receipt-row .label {
+  color: var(--text-secondary);
+}
+
+.receipt-row .val {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.receipt-row.total-row {
+  border-top: 1px solid var(--border-glass);
+  padding-top: 20px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.receipt-row.total-row .label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gold-total {
+  color: var(--accent-gold-start) !important;
+  font-size: 1.6rem;
+  font-weight: 700 !important;
+  text-shadow: 0 0 15px rgba(244, 201, 93, 0.2);
+}
+
+.guarantee-box {
+  border-top: 1px solid var(--border-glass);
+  padding-top: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.guarantee-box i {
+  color: var(--accent-gold-start);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.guarantee-box p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .booking-container {
+    padding: 0 24px;
+  }
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-form-area {
+    padding: 24px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
