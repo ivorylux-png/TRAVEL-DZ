@@ -1,0 +1,22 @@
+.blog-background-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('../images/z10.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.blog-background-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  z-index: 0;
+}
+
+.blog-background-wrapper > * {
+  position: relative;
+  z-index: 1;
+}

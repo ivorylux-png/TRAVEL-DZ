@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel DZ - Reservation Confirmed</title>
+  <meta name="description" content="Your luxury getaway to Algeria is confirmed. View details of your customized booking request and next-steps for concierge guidance.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style/shared.css">
+  <link rel="stylesheet" href="../style/confirmationbooking.css">
+</head>
+<body>
+
+  <header class="glass-panel" id="header">
+    <nav class="navbar">
+       <a href="../content/HOME.html" class="nav-logo">
+        <img src="../images/logotraveldz.jpg" alt="Travel DZ Logo">
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="../content/HOME.html" class="nav-link">Home</a></li>
+        <li><a href="../content/destination.html" class="nav-link">Destinations</a></li>
+        <li><a href="../content/readMore.html" class="nav-link">Blog</a></li>
+        <li><a href="../content/contact.html" class="nav-link">Contact</a></li>
+        <li><a href="../content/login.html" class="nav-link"><i class="fa-regular fa-user"></i> Login</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../content/booking.html" class="btn-primary">Book Now</a>
+      </div>
+      <button class="nav-toggle" id="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+ 
+  <main class="success-container animate-fade-in-up">
+    <div class="success-card glass-panel-heavy">
+      <div class="success-badge">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      
+      <h1>Reservation Secured</h1>
+      <p class="success-subtitle">YOUR LUXURY TRAVEL PACKAGE IS IN REVIEW</p>
+      
+      <div class="title-divider" style="margin: 20px auto 30px; width: 60px;"></div>
+
+      <p class="success-intro">Thank you for choosing Travel DZ. A dedicated luxury travel advisor has been assigned to your profile and will contact you directly to arrange flight listings, custom timing, and secure access clearances.</p>
+
+      
+      <div class="booking-receipt-box glass-panel" id="receipt-summary">
+        <div class="receipt-row">
+          <span>Booking Status</span>
+          <span class="status-badge"><i class="fa-solid fa-circle-notch fa-spin"></i> Pending Advisor Review</span>
+        </div>
+        <div class="receipt-row">
+          <span>Booking ID</span>
+          <span class="val-bold" id="rec-id">--</span>
+        </div>
+        <div class="receipt-row">
+          <span>Client Name</span>
+          <span id="rec-name">--</span>
+        </div>
+        <div class="receipt-row">
+          <span>Destination</span>
+          <span id="rec-dest">--</span>
+        </div>
+        <div class="receipt-row">
+          <span>Travel Class</span>
+          <span id="rec-class">--</span>
+        </div>
+        <div class="receipt-row">
+          <span>Departure Date</span>
+          <span id="rec-date">--</span>
+        </div>
+        <div class="receipt-row total-highlight">
+          <span>Estimated Total Cost</span>
+          <span class="price-val" id="rec-price">0 DA</span>
+        </div>
+      </div>
+      <div class="success-actions">
+        <a href="../content/HOME.html" class="btn-primary">Return to Homepage <i class="fa-solid fa-house"></i></a>
+        <a href="../content/destination.html" class="btn-secondary">Explore Other Wilayas</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="logo"><img src="../images/logotraveldz.jpg" alt="Travel DZ Logo"></div>
+        <p>Providing ultimate luxury, private travel experiences and bespoke tour guiding services across the magnificent historic wilayas of Algeria.</p>
+      <div class="footer-socials">
+          <a href="https://www.instagram.com" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="../content/destination.html">Destinations</a></li>
+          <li><a href="../content/readMore.html">Travel Blog</a></li>
+          <li><a href="../content/booking.html">Book Online</a></li>
+          <li><a href="../content/login.html">Member Portal</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to receive curated tour schedules and private flight updates from Algeria.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to our luxury list!');">
+          <input type="email" placeholder="Your premium email" required>
+          <button type="submit" class="btn-primary"><i class="fa-regular fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Travel DZ. All Rights Reserved. Crafted for premium experiences.</p>
+    </div>
+  </footer>
+  <script src="../javascript/data.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const allBookings = getBookings();
+      if (allBookings && allBookings.length > 0) {
+        const latest = allBookings[allBookings.length - 1];
+        document.getElementById("rec-id").innerText = latest.bookingId || "BK-PENDING";
+        document.getElementById("rec-name").innerText = latest.clientName || "Valued Client";
+        document.getElementById("rec-dest").innerText = latest.destinationName + " (" + latest.duration + ")";
+        document.getElementById("rec-class").innerText = latest.travelClass;
+        
+        const dateObj = new Date(latest.travelDate);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById("rec-date").innerText = isNaN(dateObj) ? latest.travelDate : dateObj.toLocaleDateString('en-US', options);
+        document.getElementById("rec-price").innerText = latest.price;
+      }
+    });
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>
